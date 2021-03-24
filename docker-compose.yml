@@ -12,7 +12,9 @@ services:
       - POSTGRES_PASSWORD=ignite
       - POSTGRES_DB=rentx
     volumes: 
-      - pgdata:/data/postgres 
+      - pgdata:/data/postgres
+    networks:
+      - app-network 
   app:
     container_name: rentx_container
     build: .
@@ -23,7 +25,12 @@ services:
     command: npm rum dev
     volumes:
       - .:/usr/app
+    networks:
+      - app-network
 
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   pgdata:
