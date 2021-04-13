@@ -1,7 +1,8 @@
-import { AppError } from "../../../../errors/AppError";
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
-import { UsersRepositoryInMemory } from "../../repositories/in-memory/UsersRepositoryInMemory";
-import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
+import { AppError } from "@errors/AppError";
+import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
+import { UsersRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersRepositoryInMemory";
+import { CreateUserUseCase } from "@modules/accounts/useCases/createUser/CreateUserUseCase";
+
 import { AuthenticateUserUseCase } from "./AutheticateUserUseCase";
 
 let authenticateUserUseCase: AuthenticateUserUseCase;
@@ -16,6 +17,7 @@ describe("Authenticate User", () => {
     );
     createUserUseCase = new CreateUserUseCase(usersRepositoryInMemory);
   });
+
   it("should de able to authenticate an user", async () => {
     const user: ICreateUserDTO = {
       driver_licence: "0004521",
@@ -56,7 +58,7 @@ describe("Authenticate User", () => {
 
       await authenticateUserUseCase.execute({
         email: user.email,
-        password: user.password,
+        password: "incorrectPassword",
       });
     }).rejects.toBeInstanceOf(AppError);
   });
