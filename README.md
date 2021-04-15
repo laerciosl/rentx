@@ -7,16 +7,16 @@
 **RN**
 [X] Não deve ser possível cadastrar um carro com uma placa já existente.
 [X] O carro deve ser cadastrado, por padrão, com disponibilidade.
-[] * O usuário responsável pelo cadastro deve ser um usuário administrador.
+[X] * O usuário responsável pelo cadastro deve ser um usuário administrador.
 
 
 # Listagem de Carros
 
 **RF**
-[] Deve ser possível listar todos carros disponíveis.
-[] Deve ser possível listar todos carros disponíveis pelo nome da categoria.
-[] Deve ser possível listar todos carros disponíveis pelo nome da marcar.
-[] Deve ser possível listar todos carros disponíveis pelo nome do carro.
+[X] Deve ser possível listar todos carros disponíveis.
+[X] Deve ser possível listar todos carros disponíveis pelo nome da categoria.
+[X] Deve ser possível listar todos carros disponíveis pelo nome da marca.
+[X] Deve ser possível listar todos carros disponíveis pelo nome do carro.
 
 **RNF**
 
