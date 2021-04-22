@@ -9,9 +9,9 @@ const specificationsRoutes = Router();
 const createSpecificationController = new CreateSpecificationController();
 const listSpecificationController = new ListSpecificationController();
 
-// specificationsRoutes.use(ensureAuthenticate);
-specificationsRoutes.post("/", createSpecificationController.handle);
-
 specificationsRoutes.get("/", listSpecificationController.handle);
+
+specificationsRoutes.use(ensureAuthenticate);
+specificationsRoutes.post("/", createSpecificationController.handle);
 
 export { specificationsRoutes };
